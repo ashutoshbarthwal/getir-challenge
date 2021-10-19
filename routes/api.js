@@ -9,6 +9,7 @@ const {
 const multipartMiddleware = multipart();
 
 const router = express.Router();
-router.get('/records', [], asyncHandler(recordController.post));
+router.get('/records', [], asyncHandler(recordController.get));
+router.post('/records', [], asyncHandler(recordController.post));
 
 module.exports = router;

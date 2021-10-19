@@ -17,7 +17,9 @@ class ReportService {
   }
 
   /**
-   * logins user
+   * getData
+   * 
+   * retrives data from monodv
    *
    * @param  {[type]} inputs [description]
    * @return {[type]}        [description]
@@ -25,7 +27,7 @@ class ReportService {
   async getData(inputs) {
     await this.reportValidator.validate(inputs, 'list');
     var MongoClient = require('mongodb').MongoClient;
-    var url = 'mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true';
+    var url = env('MONGODB_URL');
     const client = new MongoClient(url);
     await client.connect()
     const query = {

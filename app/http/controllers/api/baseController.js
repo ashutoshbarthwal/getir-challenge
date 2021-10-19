@@ -5,8 +5,7 @@ const baseService = new BaseService();
 
 module.exports = {
   /**
-   * validate refresh token and
-   * generate jwt token
+   * 
    *
    * @param  {[type]}   req  [description]
    * @param  {[type]}   res  [description]
