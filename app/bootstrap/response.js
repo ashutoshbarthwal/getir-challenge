@@ -38,9 +38,9 @@ module.exports = {
 
         // Set status code and send response data.
         res.status(statusCode);
-
+        
         const response = {
-          code: statusCode,
+          code: 0,
           msg : msg,
           records: data
         };

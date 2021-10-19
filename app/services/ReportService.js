@@ -32,10 +32,10 @@ class ReportService {
     await client.connect()
     const query = {
         createdAt:{
-            $gte:new Date(inputs['startDate']), $lt:new Date(inputs['endDate'])
+            $gte:new Date(inputs['startDate']), $lte:new Date(inputs['endDate'])
         },
         totalCount:{
-            $gte:parseInt(inputs['minCount']), $lt:parseInt(inputs['maxCount'])
+            $gt:parseInt(inputs['minCount']), $lt:parseInt(inputs['maxCount'])
         }
     }
     const collections2 = await client.db().collection('records').aggregate([
